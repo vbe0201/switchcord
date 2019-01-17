@@ -1,0 +1,16 @@
+# Following statements tell git to ignore certain files when exporting.
+# When somebody now downloads the repository as a zip, he won't get those
+# files. Certain files are simply just for the git repo or dev purposes.
+
+README.md export-ignore
+
+assets/ export-ignore
+
+.gitattributes export-ignore
+.gitignore export-ignore
+.github/ export-ignore
+
+# Default handle line endings:
+
+* text=auto
+*.png binary
