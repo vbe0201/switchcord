@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>switchcord</h1>
+    <h1>Switchcord</h1>
     <strong>An unofficial Discord client for the Nintendo Switch console.</strong>
     <!-- Place badges here -->
 </div>
