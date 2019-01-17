@@ -1,0 +1,1 @@
+add_executable(switchcord src/main.cc)
