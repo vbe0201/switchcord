@@ -11,7 +11,7 @@ Quote from the [Discord ToS](https://discordapp.com/terms):
 ```
 RIGHTS TO USE THE SERVICE
 [...] 
-ou agree not to (and not to attempt to) (i) use the Service for any use or purpose other than
+you agree not to (and not to attempt to) (i) use the Service for any use or purpose other than
 as expressly permitted by these Terms;(ii) copy, adapt, modify, prepare derivative works based
 upon, distribute, license, sell, transfer, publicly display, publicly perform, transmit, stream,
 broadcast, attempt to discover any source code, reverse engineer, decompile, dissemble, or
