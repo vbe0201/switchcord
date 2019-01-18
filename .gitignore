@@ -4,7 +4,6 @@
 *.d
 
 # Object files
-*.o
 *.ko
 *.obj
 *.elf
@@ -12,6 +11,7 @@
 # Linker output
 *.ilk
 *.map
+*.cbd
 *.exp
 
 # Precompiled Headers
@@ -32,7 +32,6 @@
 
 # Executables
 *.exe
-*.out
 *.app
 *.i*86
 *.x86_64
@@ -63,3 +62,12 @@ dkms.conf
 ### CLion stuff
 # Project directories
 .idea/
+
+### Cmake
+CMakeCache.txt
+CMakeFiles
+cmake_install.cmake
+Makefile
+
+### Packaging
+package_switch.sh
