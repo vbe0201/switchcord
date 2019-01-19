@@ -42,11 +42,8 @@ set(BUILD_EXEFS_SRC "exefs_src")
 include(cmake/switchcord-options.cmake)
 include(cmake/switchcord-dev-tools.cmake)
 
-if (switchcord_USE_CPP_17)
-    set(CMAKE_CXX_STANDARD 17)
-else ()
-    set(CMAKE_CXX_STANDARD 11)
-endif ()
+set(CMAKE_CXX_STANDARD 17)
+
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     include(cmake/clang-cxx-dev-tools.cmake)
 endif ()
@@ -75,9 +72,7 @@ if (APPLE )
     string ( REPLACE "-Wl,-headerpad_max_install_names" "" CMAKE_CXX_LINK_FLAGS ${CMAKE_CXX_LINK_FLAGS} )
 endif ()
 
-set(CMAKE_C_COMPILE_FLAGS "${CMAKE_C_COMPILE_FLAGS} ${NX_C_COMPILE_FLAGS}")
 set(CMAKE_CXX_COMPILE_FLAGS  "${CMAKE_CXX_COMPILE_FLAGS} ${NX_CXX_COMPILE_FLAGS}")
-set(CMAKE_C_LINK_FLAGS  "${CMAKE_C_LINK_FLAGS} ${NX_LINK_FLAGS}")
 set(CMAKE_CXX_LINK_FLAGS  "${CMAKE_CXX_LINK_FLAGS} ${NX_LINK_FLAGS}")
 
 LIST(APPEND CMAKE_PROGRAM_PATH  "${DEVKITPRO}/tools/bin")
