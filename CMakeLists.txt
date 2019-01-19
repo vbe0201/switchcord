@@ -42,11 +42,8 @@ set(BUILD_EXEFS_SRC "exefs_src")
 include(cmake/switchcord-options.cmake)
 include(cmake/switchcord-dev-tools.cmake)
 
-if (switchcord_USE_CPP_17)
-    set(CMAKE_CXX_STANDARD 17)
-else ()
-    set(CMAKE_CXX_STANDARD 11)
-endif ()
+set(CMAKE_CXX_STANDARD 17)
+
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
     include(cmake/clang-cxx-dev-tools.cmake)
 endif ()
