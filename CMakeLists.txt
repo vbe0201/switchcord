@@ -65,7 +65,7 @@ set(NX_LINK_FLAGS "-specs=${LIBNX}/switch.specs -g ${ARCH} -Wl,-Map,${TARGET}.ma
 
 # Prevent CMake from assuming we're compiling for macOS and adding platform specific flags
 # that strip symbols from resulting elf files.
-if (APPLE )
+if (APPLE)
     string ( REPLACE "-Wl,-search_paths_first" "" CMAKE_C_LINK_FLAGS ${CMAKE_C_LINK_FLAGS} )
     string ( REPLACE "-Wl,-search_paths_first" "" CMAKE_CXX_LINK_FLAGS ${CMAKE_CXX_LINK_FLAGS} )
     string ( REPLACE "-Wl,-headerpad_max_install_names" "" CMAKE_C_LINK_FLAGS ${CMAKE_C_LINK_FLAGS} )
