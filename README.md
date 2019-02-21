@@ -43,11 +43,13 @@ This project is based on the [libnx](https://github.com/switchbrew/libnx) librar
 [SwitchBrew](https://switchbrew.org/wiki/Main_Page). First of all, you need to setup a
 [development environment](https://switchbrew.org/w/index.php?title=Setting_up_Development_Environment).
 
-Then `cd` into your project directory and use `sh cmake_devkitA64.sh` to generate your
-Makefile, CMake helpers and a packaging script. You must run this through this shell script
-to export all the devkitA64 CXX configurations into environment variables before CMake runs.
-This is basically some sort of helper script.
+To build your .nro binary, follow these steps:
+```bash
+# First of all, generate your Makefile.
+cmake .
 
-Then simply run `make` to compile the project from the newly generated Makefile.
+# Then, build the project.
+make
+```
 
-Finally you can package up your app into all of its variations, including nro, run `sh package_switch.sh`.
+You should now have a `switchcord.nro` located inside a `bin/` directory.
