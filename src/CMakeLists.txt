@@ -11,3 +11,6 @@ if (switchcord_VERBOSE)
 
     switchcord_info("Loaded ${switchcord_SOURCE_FILES_LENGTH} files.")
 endif ()
+
+add_executable("${TARGET}.elf"
+        ${switchcord_SOURCE_DIR}/main.cc)
