@@ -11,7 +11,7 @@ int main(int argc, char **argv) {
 
     std::cout << "Hello World!" << std::endl;
 
-    // Main loop
+    // main loop
     while (appletMainLoop()) {
         // Scan all the inputs. This should be done once for each frame.
         hidScanInput();
