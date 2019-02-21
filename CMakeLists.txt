@@ -40,12 +40,12 @@ set(switchcord_ICON "assets/discord-logo.png")
 set(BUILD_EXEFS_SRC "exefs_src")
 
 include(cmake/switchcord-options.cmake)
-include(cmake/switchcord-dev-tools.cmake)
+include(cmake/switchcord-utils.cmake)
 
 set(CMAKE_CXX_STANDARD 17)
 
 if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
-    include(cmake/clang-cxx-dev-tools.cmake)
+    include(cmake/clang-utils.cmake)
 endif ()
 
 if (switchcord_VERBOSE)
