@@ -69,5 +69,7 @@ CMakeFiles
 cmake_install.cmake
 Makefile
 
-### Packaging
-package_switch.sh
+### Switch binaries & helper files
+*.nro
+*.nso
+*.nacp
