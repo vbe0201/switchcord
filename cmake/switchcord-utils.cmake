@@ -4,7 +4,7 @@ function(switchcord_info message)
     endif ()
 endfunction()
 
-function(switchcord_status_message message)
+function(switchcord_status message)
     message(STATUS ${message})
 endfunction()
 
