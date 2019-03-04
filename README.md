@@ -45,11 +45,14 @@ This project is based on the [libnx](https://github.com/switchbrew/libnx) librar
 
 To build your .nro binary, follow these steps:
 ```bash
-# First of all, generate your Makefile.
-cmake .
+# You might want to separate all the CMake helpers from your project files.
+mkdir build && cd build
 
-# Then, build the project.
+# Then generate your Makefile (assuming you're inside the build directory).
+cmake .. -DCMAKE_TOOLCHAIN_FILE=../devkita64-libnx.cmake
+
+# Finally build the project.
 make
 ```
 
-You should now have a `switchcord.nro` located inside a `bin/` directory.
+You should now have a `switchcord.nro` binary located inside a `bin/` directory.
