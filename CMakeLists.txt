@@ -9,6 +9,10 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin CACHE INTERNAL "" FORCE)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/lib CACHE INTERNAL "" FORCE)
 set(TESTS_OUTPUT_DIR ${EXECUTABLE_OUTPUT_PATH}/tests CACHE INTERNAL "" FORCE)
 
+if (NOT DEFINED CMAKE_BUILD_TYPE_INIT)
+    set(CMAKE_BUILD_TYPE_INIT Release)
+endif ()
+
 # If exists, copy pre-commit hook for the project.
 if (NOT EXISTS ${PROJECT_SOURCE_DIR}/.git/hooks/pre-commit)
     switchcord_status("Copying pre-commit hook")
