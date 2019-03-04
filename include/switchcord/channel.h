@@ -6,13 +6,13 @@
 #define SWITCHCORD_INCLUDE_CHANNEL_H_
 
 namespace switchcord {
-  enum ChannelTypes {
-    kText = 0,
-    kPrivate = 1,
-    kVoice = 2,
-    kGroup = 3,
-    kCategory = 4,
-  };
+enum ChannelTypes {
+  kText = 0,
+  kPrivate = 1,
+  kVoice = 2,
+  kGroup = 3,
+  kCategory = 4,
+};
 }
 
-#endif // SWITCHCORD_INCLUDE_CHANNEL_H_
+#endif  // SWITCHCORD_INCLUDE_CHANNEL_H_
