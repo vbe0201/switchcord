@@ -51,6 +51,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
 ### C++ template
 # Fortran module files
 *.mod
@@ -63,7 +64,7 @@ dkms.conf
 # Project directories
 .idea/
 
-### Cmake
+### CMake
 CMakeCache.txt
 CMakeFiles
 cmake_install.cmake
