@@ -3,6 +3,8 @@
 # files. Certain files are simply just for the git repo or dev purposes.
 
 README.md export-ignore
+CODE_OF_CONDUCT.md export-ignore
+CONTRIBUTING.md export-ignore
 
 assets/ export-ignore
 
@@ -12,5 +14,5 @@ assets/ export-ignore
 
 # Default handle line endings:
 
-* text=auto
+* text=auto eol=lf
 *.png binary
