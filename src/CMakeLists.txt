@@ -14,7 +14,8 @@ endif ()
 
 add_executable(switchcord.elf
     ${switchcord_SOURCE_DIR}/main.cc
-    ${switchcord_INCLUDE_HEADERS})
+    ${switchcord_INCLUDE_HEADERS}
+    ${PROJECT_BINARY_DIR}/switchcord_meta.h)
 
 target_include_directories(switchcord.elf
     PUBLIC ${switchcord_INCLUDE_DIR})

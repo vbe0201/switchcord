@@ -31,6 +31,12 @@ set(switchcord_TITLE "Switchcord")
 set(switchcord_AUTHOR "Valentin B.")
 set(switchcord_ICON "${PROJECT_SOURCE_DIR}/assets/discord-logo.png")
 
+# Discord-specific options.
+set(DISCORD_API_URL "\"https://discordapp.com/api\"")
+set(DISCORD_API_VERSION "\"/v7\"")
+set(DISCORD_GATEWAY_VERSION "\"?v=6\"")
+set(DISCORD_VOICE_GATEWAY_VERSION "\"?v=4\"")
+
 set(CMAKE_C_STANDARD 11)
 if (switchcord_USE_CPP_17)
     set(CMAKE_CXX_STANDARD 17)
@@ -43,6 +49,13 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
 endif ()
 
 include(nx-utils)
+
+configure_file(
+    "${PROJECT_SOURCE_DIR}/switchcord_meta.h.in"
+    "${PROJECT_BINARY_DIR}/switchcord_meta.h"
+)
+
+include_directories(${PROJECT_BINARY_DIR})
 
 switchcord_info("Building Switchcord version ${switchcord_FULL_VERSION}")
 
