@@ -7,22 +7,22 @@
 #include <switch.h>
 
 int main(int argc, char **argv) {
-    consoleInit(nullptr);
+  consoleInit(nullptr);
 
-    std::cout << "Hello World!" << std::endl;
+  std::cout << "Hello World!" << std::endl;
 
-    // main loop
-    while (appletMainLoop()) {
-        // Scan all the inputs. This should be done once for each frame.
-        hidScanInput();
+  // main loop
+  while (appletMainLoop()) {
+    // Scan all the inputs. This should be done once for each frame.
+    hidScanInput();
 
-        u64 key_down = hidKeysDown(CONTROLLER_P1_AUTO);
+    u64 key_down = hidKeysDown(CONTROLLER_P1_AUTO);
 
-        if (key_down & KEY_PLUS) break; // break in order to return to hbmenu
+    if (key_down & KEY_PLUS) break;  // break in order to return to hbmenu
 
-        consoleUpdate(nullptr);
-    }
+    consoleUpdate(nullptr);
+  }
 
-    consoleExit(nullptr);
-    return 0;
+  consoleExit(nullptr);
+  return 0;
 }

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Enforce switchcord's whitespace policy.
+# Enforce Switchcord's whitespace policy.
 git config --local core.whitespace tab-in-indent,trailing-space
 
 paths_to_check="src/CMakeLists.txt"
