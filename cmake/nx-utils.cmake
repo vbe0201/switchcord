@@ -23,9 +23,9 @@ if (NOT NACPTOOL)
 endif ()
 
 function(add_nacp target APP_TITLE APP_AUTHOR APP_VERSION)
-    set(__NACP_COMMAND ${NACPTOOL} --create ${APP_TITLE} ${APP_AUTHOR} ${APP_VERSION} ${EXECUTABLE_OUTPUT_PATH}/${target})
+    set(__NACP_COMMAND ${NACPTOOL} --create ${APP_TITLE} ${APP_AUTHOR} ${APP_VERSION} ${target})
 
-    add_custom_command(OUTPUT ${EXECUTABLE_OUTPUT_PATH}/${target}
+    add_custom_command(OUTPUT ${target}
         COMMAND ${__NACP_COMMAND}
         WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}
         VERBATIM
@@ -35,19 +35,19 @@ endfunction()
 function(add_nro_target target APP_TITLE APP_AUTHOR APP_VERSION APP_ICON)
     get_filename_component(target_we ${target} NAME_WE)
 
-    if (NOT ${EXECUTABLE_OUTPUT_PATH}/${target_we}.nacp)
-        add_nacp(${target_we}.nacp ${APP_TITLE} ${APP_AUTHOR} ${APP_VERSION})
+    if (NOT ${CMAKE_BINARY_DIR}/${target_we}.nacp)
+        add_nacp(${CMAKE_BINARY_DIR}/${target_we}.nacp ${APP_TITLE} ${APP_AUTHOR} ${APP_VERSION})
     endif ()
 
     add_custom_command(OUTPUT ${EXECUTABLE_OUTPUT_PATH}/${target_we}.nro
-        COMMAND ${ELF2NRO} $<TARGET_FILE:${target}> ${EXECUTABLE_OUTPUT_PATH}/${target_we}.nro --nacp=${EXECUTABLE_OUTPUT_PATH}/${target_we}.nacp --icon=${APP_ICON}
-        DEPENDS ${target} ${EXECUTABLE_OUTPUT_PATH}/${target_we}.nacp
+        COMMAND ${ELF2NRO} $<TARGET_FILE:${target}> ${EXECUTABLE_OUTPUT_PATH}/${target_we}.nro --nacp=${target_we}.nacp --icon=${APP_ICON}
+        DEPENDS ${target} ${CMAKE_BINARY_DIR}/${target_we}.nacp
         VERBATIM
         )
 
     if (CMAKE_RUNTIME_OUTPUT_DIRECTORY)
-        add_custom_target(${target_we}_nro ALL SOURCES ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${target_we}.nro)
+        add_custom_target(${target_we}.nro ALL SOURCES ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${target_we}.nro)
     else ()
-        add_custom_target(${target_we}_nro ALL SOURCES ${EXECUTABLE_OUTPUT_PATH}/${target_we}.nro)
+        add_custom_target(${target_we}.nro ALL SOURCES ${EXECUTABLE_OUTPUT_PATH}/${target_we}.nro)
     endif ()
 endfunction()

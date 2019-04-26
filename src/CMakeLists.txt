@@ -24,6 +24,6 @@ if (LIBNX) # We're using the devkitPro toolchain.
     target_link_libraries(switchcord.elf nx)
     set_target_properties(switchcord.elf PROPERTIES
         LINKER_LANGUAGE CXX
-        LINK_FLAGS "-specs=${LIBNX}/switch.specs -Wl,-no-as-needed -Wl,-Map,switchcord.map"
+        LINK_FLAGS "-specs=${LIBNX}/switch.specs -Wl,-no-as-needed -Wl,-Map,.map"
         )
 endif ()
