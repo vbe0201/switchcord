@@ -68,6 +68,7 @@ dkms.conf
 CMakeCache.txt
 CMakeFiles
 cmake_install.cmake
+cmake-build-*/
 Makefile
 
 ### Switch binaries & helper files
